@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Axios from "axios";
 import {Switch, Route, Link } from 'react-router-dom';
 import Login from "./login.component";
 
@@ -47,30 +46,8 @@ class SignUp extends Component {
 
     submitclick(event){
         //console.log(this.state.lastname);
-        //console.log(process.env.REACT_APP_API);
-        Axios.post(process.env.REACT_APP_API+"users/post",
-            {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                }
-            },
-            {
-                data:{
-                    firstName : this.state.firstname,
-                    lastName : this.state.lastname,
-                    email: this.state.email,
-                    password : this.state.password
-                }
-            },
-            {
-                withCredentials : true
-            }
-        ).then(response=>{
-            console.log(response.data);
-            if(response.data.length !== 0){
-                this.props.history.push("/navigation");
-            }
-        });
+        //API
+        this.props.history.push("/signin");
         event.preventDefault();
     }
 
