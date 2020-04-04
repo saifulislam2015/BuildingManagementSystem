@@ -1,4 +1,3 @@
-# NavigatorApp
+# BMS
 
-A React App to emulate navigation. pom.xml and web.xml are included in order to produce a war file.
-WAR is much easier to deploy on tomcat.
+A React App to emulate client side of a Demo Building Management System.
